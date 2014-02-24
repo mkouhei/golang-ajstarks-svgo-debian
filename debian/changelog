@@ -1,0 +1,5 @@
+golang-svgo (0.0~git20140102+3b86b4c-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)
+
+ -- Kouhei Maeda <mkouhei@palmtb.net>  Fri, 21 Feb 2014 09:46:36 +0900

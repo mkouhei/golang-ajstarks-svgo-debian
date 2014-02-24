@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export DH_GOPKG := github.com/ajstarks/svgo
+BLDPATH := obj-$(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+%:
+	dh $@ --buildsystem=golang --with=golang
+
+override_dh_auto_install:
+	install -d ${CURDIR}/debian/golang-svgo-dev
+	dh_auto_install -O-buildsystem=golang --destdir=${CURDIR}/debian/golang-svgo-dev/
+	rm -rf ${CURDIR}/debian/golang-svgo-dev/usr/bin
+
+	install -d ${CURDIR}/debian/golang-svgo-bin/usr/bin
+	for cmd in funnel planets pmap rl; do \
+		mv ${CURDIR}/${BLDPATH}/bin/$$cmd ${CURDIR}/${BLDPATH}/bin/svg$$cmd; \
+	done
+	install -m 0755 ${CURDIR}/${BLDPATH}/bin/* ${CURDIR}/debian/golang-svgo-bin/usr/bin/
+	

@@ -1,0 +1,23 @@
+Source: golang-svgo
+Section: devel
+Priority: optional
+Maintainer: Kouhei Maeda <mkouhei@palmtb.net>
+Build-Depends: debhelper (>= 9.0.0), dh-golang, golang-go
+Standards-Version: 3.9.5
+Homepage: https://github.com/ajstarks/svgo
+
+Package: golang-svgo-dev
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, golang-go
+Description: Go Language Library for SVG generation
+ The library generates SVG as defined by the Scalable Vector Graphics 1.1
+ Specification (http://www.w3.org/TR/SVG11/).
+ Output goes to the specified io.Writer.
+
+Package: golang-svgo-bin
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: svgo command for SVG generation
+ The library generates SVG as defined by the Scalable Vector Graphics 1.1
+ Specification (http://www.w3.org/TR/SVG11/).
+ Output goes to the specified io.Writer.
