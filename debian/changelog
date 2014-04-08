@@ -1,4 +1,4 @@
-golang-svgo (0.0~git20140102+3b86b4c-1) unstable; urgency=low
+golang-ajstarks-svgo (0.0~git20140102+3b86b4c-1) unstable; urgency=low
 
   * Initial release (Closes: #nnnn)
 
